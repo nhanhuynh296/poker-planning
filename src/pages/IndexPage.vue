@@ -1,42 +1,88 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+  <q-page>
+    <div class="q-py-sm q-px-sm row flex-center">
+      <div class="col-md-8 col-sm-12 col-12">
+        <RoomDetailComponent :room-attributes="roomData"/>
+      </div>
+    </div>
+    <div class="q-py-sm q-px-sm row flex-center">
+      <div class="col-md-8 col-sm-10 col-12">
+        <UsersInRoomWrapper :users="players"/>
+      </div>
+    </div>
+    <div class="q-py-sm q-px-sm row flex-center">
+      <div class="col-md-8 col-sm-10 col-12">
+        <PokerCardWrapper :card-values="fibonacciValuesStrategy"/>
+      </div>
+    </div>
+
+
   </q-page>
 </template>
 
-<script setup lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
-import { ref } from 'vue';
+<script lang="ts" setup>
+import RoomDetailComponent from 'components/RoomComponents/RoomDetailWrapper.vue';
+import UsersInRoomWrapper from 'components/UserComponents/UsersInRoomWrapper.vue';
+import PokerCardWrapper from 'components/PokerCardComponents/PokerCardWrapper.vue';
+import {UserSilhouetteProps} from 'components/UserComponents/UserSilhouetteComponent.vue';
+import {PokerCardProps} from 'components/PokerCardComponents/CardComponent.vue';
+import {RoomAttributeProp} from 'components/RoomComponents/RoomAttributeComponent.vue';
 
-const todos = ref<Todo[]>([
+const players: UserSilhouetteProps[] = [
   {
-    id: 1,
-    content: 'ct1'
+    id: 'Nathan Huynh'
   },
   {
-    id: 2,
-    content: 'ct2'
+    id: 'Alok Alok'
   },
   {
-    id: 3,
-    content: 'ct3'
-  },
-  {
-    id: 4,
-    content: 'ct4'
-  },
-  {
-    id: 5,
-    content: 'ct5'
+    id: 'Nick Lott'
   }
-]);
-const meta = ref<Meta>({
-  totalCount: 1200
-});
+]
+
+const fibonacciValuesStrategy: PokerCardProps[] = [
+  {
+    value: 1
+  },
+  {
+    value: 2
+  },
+  {
+    value: 3
+  },
+  {
+    value: 5
+  },
+  {
+    value: 8
+  },
+  {
+    value: 13
+  }
+]
+
+const roomData: RoomAttributeProp[] = [
+  {
+    title: 'Users',
+    caption: players.map(player => player.id),
+    icon: 'group'
+  },
+  {
+    title: 'Room name',
+    caption: 'Series 7',
+    icon: 'meeting_room'
+  },
+  {
+    title: 'URL',
+    caption: 'https://nathanhuynh.link',
+    icon: 'link'
+  },
+  {
+    title: 'Donate',
+    caption: 'Nick please give me pay rise 👉🏻👈🏻',
+    icon: 'price_change'
+  },
+]
+
+
 </script>
