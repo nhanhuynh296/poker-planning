@@ -1,11 +1,17 @@
 <template>
   <q-card>
-    <div>
-      <RoomAttributeComponent v-for="roomDatum in roomAttributes" :key="roomDatum.title" v-bind="roomDatum">
-        <div v-if="roomDatum.title === 'Users'">
+    <div v-for="roomDatum in roomAttributes" :key="roomDatum.title">
+      <div v-if="roomDatum.title == 'Users'">
+        <RoomAttributeComponent :title="roomDatum.title" :icon="roomDatum.icon">
           <UserSilhouetteComponent  v-for="user in roomDatum.caption" :key="user" :id="user"/>
-        </div>
-      </RoomAttributeComponent>
+        </RoomAttributeComponent>
+      </div>
+      <div v-else>
+        <RoomAttributeComponent v-bind="roomDatum"/>
+
+      </div>
+
+
 
     </div>
     <q-card-actions>

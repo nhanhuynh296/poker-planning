@@ -1,17 +1,17 @@
 <template>
   <q-page>
     <div class="q-py-sm q-px-sm row flex-center">
-      <div class="col-md-8 col-sm-12 col-12">
+      <div class="col-md-8 col-12">
         <RoomDetailComponent :room-attributes="roomData"/>
       </div>
     </div>
     <div class="q-py-sm q-px-sm row flex-center">
-      <div class="col-md-8 col-sm-10 col-12">
+      <div class="col-md-8 col-sm-11 col-12">
         <UsersInRoomWrapper :users="players"/>
       </div>
     </div>
-    <div class="q-py-sm q-px-sm row flex-center">
-      <div class="col-md-8 col-sm-10 col-12">
+    <div class="q-py-xl q-px-sm row flex-center">
+      <div class="col-md-8 col-sm-11 col-12">
         <PokerCardWrapper :card-values="fibonacciValuesStrategy"/>
       </div>
     </div>
@@ -29,6 +29,15 @@ import {PokerCardProps} from 'components/PokerCardComponents/CardComponent.vue';
 import {RoomAttributeProp} from 'components/RoomComponents/RoomAttributeComponent.vue';
 
 const players: UserSilhouetteProps[] = [
+  {
+    id: 'Nathan Huynh'
+  },
+  {
+    id: 'Alok Alok'
+  },
+  {
+    id: 'Nick Lott'
+  },
   {
     id: 'Nathan Huynh'
   },

@@ -20,7 +20,7 @@ const props = defineProps<UserSilhouetteProps>();
 
 //todo call api to get image from name
 const data = null;
-const abbreviatedName =  props.id?.split(' ').map(bit => bit.charAt(0)).join();
+const abbreviatedName =  props.id.split(' ').map(bit => bit.charAt(0)).join('');
 
 const backgroundColor = getRandomColour();
 const textColor = isDarkColour(backgroundColor) ? 'black' : 'white'

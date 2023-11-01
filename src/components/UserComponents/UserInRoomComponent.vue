@@ -11,8 +11,8 @@ defineProps<UserInRoomProps>()
 <template>
   <q-card>
     <q-card-section>
-      <div class="text-h6">{{ name }}</div>
-<!--      <div class="text-subtitle2"> John Doe</div>-->
+<!--      <div class="text-h6">{{ name }}</div>-->
+      <div class="text-subtitle2"> {{ name }}</div>
     </q-card-section>
   </q-card>
 </template>

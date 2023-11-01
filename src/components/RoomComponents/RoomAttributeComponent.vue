@@ -19,10 +19,11 @@
 </template>
 
 <script lang="ts" setup>
+
 export interface RoomAttributeProp {
   title: string;
   icon?: string;
-  caption?: string
+  caption?: string | string[]
 }
 
 withDefaults(defineProps<RoomAttributeProp>(), {
