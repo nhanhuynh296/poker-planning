@@ -1,6 +1,10 @@
 # poker-planning (poker-planning)
 
 Agile Poker Planning
+## Docker
+```bash
+docker compose up
+```
 
 ## Install the dependencies
 ```bash
