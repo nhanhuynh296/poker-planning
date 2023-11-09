@@ -11,7 +11,7 @@ defineProps({
 
 <template>
   <div class="row q-col-gutter-md justify-start" >
-    <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1" v-for="user in users" :key="user.id">
+    <div v-for="user in users" :key="user.id" class="col-6 col-sm-4 col-md-3 col-lg-2">
       <UserInRoomComponent :name="user.id"/>
     </div>
   </div>

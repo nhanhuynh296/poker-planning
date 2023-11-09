@@ -1,6 +1,6 @@
 <template>
   <div class="row q-col-gutter-md justify-start">
-    <div v-for="cardValue in cardValues" :key="cardValue.value" class="col-4 col-sm-3 col-md-2 col-lg-1">
+    <div v-for="cardValue in cardValues" :key="cardValue.value" class="col-4 col-sm-3 col-md-2">
       <PokerCardComponent :value="cardValue.value"/>
     </div>
   </div>

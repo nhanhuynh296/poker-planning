@@ -15,8 +15,6 @@
         <PokerCardWrapper :card-values="fibonacciValuesStrategy"/>
       </div>
     </div>
-
-
   </q-page>
 </template>
 
@@ -27,6 +25,7 @@ import PokerCardWrapper from 'components/PokerCardComponents/PokerCardWrapper.vu
 import {UserSilhouetteProps} from 'components/UserComponents/UserSilhouetteComponent.vue';
 import {PokerCardProps} from 'components/PokerCardComponents/CardComponent.vue';
 import {RoomAttributeProp} from 'components/RoomComponents/RoomAttributeComponent.vue';
+import {useRoute} from 'vue-router';
 
 const players: UserSilhouetteProps[] = [
   {
@@ -78,7 +77,7 @@ const roomData: RoomAttributeProp[] = [
   },
   {
     title: 'Room name',
-    caption: 'Series 7',
+    caption: useRoute().params['roomId'],
     icon: 'meeting_room'
   },
   {

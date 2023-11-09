@@ -10,7 +10,8 @@
 
 <script lang="ts" setup>
 import {colors} from 'quasar';
-import brightness = colors.brightness;
+
+const luminosity = colors.luminosity;
 
 export interface UserSilhouetteProps {
   id: string
@@ -31,7 +32,7 @@ function getRandomColour(): string {
 }
 
 function isDarkColour(colour: string): boolean {
-  return brightness(colour) < 125
+  return luminosity(colour) < 0.5
 
 }
 </script>

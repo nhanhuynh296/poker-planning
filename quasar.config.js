@@ -32,6 +32,7 @@ module.exports = configure(function (/* ctx */) {
     boot: [
       'firebase',
       'axios',
+      'router',
     ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
@@ -60,7 +61,7 @@ module.exports = configure(function (/* ctx */) {
         node: 'node16'
       },
 
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
@@ -88,7 +89,8 @@ module.exports = configure(function (/* ctx */) {
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
     devServer: {
       // https: true
-      open: true // opens browser window automatically
+      open: false, // opens browser window automatically
+      port: 8080
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
@@ -101,7 +103,7 @@ module.exports = configure(function (/* ctx */) {
         // dark: true,
       },
 
-      iconSet: 'material-icons-round', // Quasar icon set
+      iconSet: 'material-icons', // Quasar icon set
       lang: 'en-GB', // Quasar language pack
 
       // For special cases outside of where the auto-import strategy can have an impact

@@ -1,8 +1,9 @@
 // Import the functions you need from the SDKs you need
 import {initializeApp} from 'firebase/app';
-import {getAuth} from 'firebase/auth';
+import {connectAuthEmulator, getAuth} from 'firebase/auth';
 import {getAnalytics} from 'firebase/analytics';
 import {getDatabase} from 'firebase/database';
+import * as process from 'process';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,6 +23,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+if (!process.env.NODE_ENV || !process.env.NODE_ENV.toLowerCase().startsWith('prod')) {
+  connectAuthEmulator(auth, 'http://127.0.0.1:9099');
+}
 const analytics = getAnalytics(app);
 const database = getDatabase(app);
 
